@@ -29,11 +29,31 @@ function renderCafe(doc) {
 }
 
 // getting data
-db.collection('cafes').get().then((snapshot) => {
+db.collection('cafes').orderBy('name').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
         renderCafe(doc);
     });
 })
+
+// // this query needs a index creation in firebase to work
+// // https://youtu.be/cb8H_hp10rc?si=kkp8uiYFM0QJNorq&t=156
+// db.collection('cafes').where('city', '==', 'manchester').orderBy('name').get().then((snapshot) => {
+//     snapshot.docs.forEach(doc => {
+//         renderCafe(doc);
+//     });
+// })
+
+// db.collection('cafes').where('city', '==', 'manchester').get().then((snapshot) => {
+//     snapshot.docs.forEach(doc => {
+//         renderCafe(doc);
+//     });
+// })
+
+// db.collection('cafes').where('city', '<', 'n').get().then((snapshot) => {
+//     snapshot.docs.forEach(doc => {
+//         renderCafe(doc);
+//     });
+// })
 
 // saving data
 form.addEventListener('submit', (e) => {
