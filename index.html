@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <h1>Cloud Cafe</h1>
+
+        <div class="content">
+
+            <form id="add-cafe-form">
+                <input type="text" name="name" placeholder="Cafe name">
+                <input type="text" name="city" placeholder="Cafe city">
+                <button>Add Cafe</button>
+            </form>
+
+            <ul id="cafe-list"></ul>
+
+        </div>
+        <script src="firebase-config.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
